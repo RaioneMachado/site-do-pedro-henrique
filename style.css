@@ -1,0 +1,526 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Capa com Efeito Parallax */
+.capa {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Altura total da tela */
+    width: 100%; /* Garante que a capa ocupe 100% da largura */
+    overflow: hidden; /* Garante que nada ultrapasse os limites */
+}
+
+/* Ajustando a imagem de fundo */
+.capa-imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cobrir toda a largura */
+    height: 100%; /* Cobrir toda a altura */
+    object-fit: cover;
+    z-index: -1;
+}
+
+.capa-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none; /* Remove o transform ou ajusta os valores */
+    will-change: transform;
+}
+
+/* Ajustando o texto */
+.capa-texto {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px; /* Reduz o padding */
+    border-radius: 10px;
+    width: 70%; /* Reduz a largura do texto */
+    max-width: 500px; /* Limita a largura máxima */
+    margin: 20px auto; /* Adiciona margem superior e inferior */
+    box-sizing: border-box;
+    font-size: 1rem; /* Tamanho da fonte menor */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    .capa-texto {
+        width: 80%; /* Aumenta a largura em telas menores */
+        padding: 10px; /* Reduz o padding */
+        font-size: 0.9rem; /* Tamanho da fonte menor em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .capa-texto {
+        width: 90%; /* Ocupa mais largura em telas muito pequenas */
+        padding: 8px; /* Padding menor */
+        font-size: 0.8rem; /* Tamanho da fonte ainda menor */
+    }
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    .capa {
+        height: auto; /* Altura automática em telas menores */
+        padding: 20px; /* Adiciona espaço interno */
+    }
+
+    .imagem-sobreposta {
+        top: 15%; /* Ajusta a posição vertical */
+        left: 5%; /* Ajusta a posição horizontal */
+        width: 50%; /* Aumenta o tamanho da imagem */
+    }
+
+    .capa-texto {
+        width: 100%; /* Ocupa toda a largura */
+        padding: 15px; /* Reduz o padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .imagem-sobreposta {
+        top: 10%; /* Ajusta a posição vertical */
+        left: 5%; /* Ajusta a posição horizontal */
+        width: 60%; /* Aumenta o tamanho da imagem */
+    }
+
+    .capa-texto {
+        padding: 10px; /* Reduz o padding */
+    }
+}
+@media (max-width: 480px) {
+    .imagem-sobreposta {
+        top: 10%; /* Ajusta a posição vertical */
+        left: 5%; /* Ajusta a posição horizontal */
+        width: 60%; /* Aumenta o tamanho da imagem */
+    }
+
+    .capa-texto {
+        padding: 10px; /* Reduz o padding */
+    }
+}
+
+
+.capa-texto h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.capa-texto h1 strong {
+    font-weight: 700;
+}
+
+.capa-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.capa-texto .btn {
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.capa-texto .btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+}
+
+/* Sobre Mim */
+#sobre {
+    padding: 60px 0;
+    background-color: #16273B;
+}
+
+.sobre-quadro {
+    background-color: #4D597E;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sobre-quadro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.sobre-texto {
+    flex: 1;
+    color: #fff;
+}
+
+.sobre-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.sobre-imagem {
+    flex: 1;
+    text-align: center;
+}
+
+.sobre-imagem img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Serviços */
+#servicos {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+#servicos h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.servico {
+    background-color: #0076b65d;
+    color: #070606;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+}
+
+.servico:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.icone-servico {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.servico h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.servico p {
+    font-size: 1rem;
+}
+
+/* Por que Escolher? */
+#escolher {
+    padding: 60px 0;
+    background-color: #F9F9F9;
+}
+
+#escolher h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.escolher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.escolher-item {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+}
+
+.escolher-item:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.icone-escolher {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.escolher-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.escolher-item p {
+    font-size: 1rem;
+}
+
+/* Atendimento Completo */
+#atendimento {
+    padding: 60px 0;
+    background-color: #f1f1f1;
+}
+
+#atendimento h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#atendimento p {
+    font-size: 1.1rem;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Contato */
+#contato {
+    padding: 60px 0;
+    background-color: #252853;
+    color: #fff;
+}
+
+#contato h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contato p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contato-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contato-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contato-info i {
+    margin-right: 10px;
+}
+
+#contato .btn {
+    background-color: #25d366;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Avaliações */
+#avaliacoes {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+#avaliacoes h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #333;
+}
+
+.avaliacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.avaliacao {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+}
+
+.avaliacao:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.avaliacao-foto {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.avaliacao-foto img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0f3e70;
+}
+
+.avaliacao-conteudo {
+    text-align: center;
+}
+
+.avaliacao-conteudo h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0f3e70;
+}
+
+.avaliacao-conteudo p {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .capa-texto h1 {
+        font-size: 2rem;
+    }
+
+    .capa-texto p {
+        font-size: 1rem;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sobre-imagem {
+        order: -1;
+    }
+
+    .servicos-grid, .escolher-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contato .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .capa-texto h1 {
+        font-size: 1.5rem;
+    }
+
+    .capa-texto p {
+        font-size: 0.9rem;
+    }
+
+    .sobre-texto h2 {
+        font-size: 1.5rem;
+    }
+
+    .sobre-texto p {
+        font-size: 1rem;
+    }
+
+    .servico h3, .escolher-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .servico p, .escolher-item p {
+        font-size: 0.9rem;
+    }
+
+    #contato h2 {
+        font-size: 1.5rem;
+    }
+
+    #contato p {
+        font-size: 1rem;
+    }
+}
