@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-    overflow-x: hidden; /* Impede a rolagem horizontal */
+    overflow-x: hidden;
 }
 
 .container {
@@ -52,18 +52,17 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh; /* Altura total da tela */
-    width: 100%; /* Garante que a capa ocupe 100% da largura */
-    overflow: hidden; /* Garante que nada ultrapasse os limites */
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
-/* Ajustando a imagem de fundo */
 .capa-imagem {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Cobrir toda a largura */
-    height: 100%; /* Cobrir toda a altura */
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
 }
@@ -72,85 +71,23 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: none; /* Remove o transform ou ajusta os valores */
     will-change: transform;
 }
 
-/* Ajustando o texto */
 .capa-texto {
     position: relative;
     z-index: 3;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px; /* Reduz o padding */
+    padding: 15px;
     border-radius: 10px;
-    width: 70%; /* Reduz a largura do texto */
-    max-width: 500px; /* Limita a largura máxima */
-    margin: 20px auto; /* Adiciona margem superior e inferior */
+    width: 70%;
+    max-width: 500px;
+    margin: 20px auto;
     box-sizing: border-box;
-    font-size: 1rem; /* Tamanho da fonte menor */
-    text-align: left; /* Alinha o texto à esquerda */
+    font-size: 1rem;
+    text-align: left;
 }
-
-/* Ajuste de responsividade */
-@media (max-width: 768px) {
-    .capa-texto {
-        width: 80%; /* Aumenta a largura em telas menores */
-        padding: 10px; /* Reduz o padding */
-        font-size: 0.9rem; /* Tamanho da fonte menor em telas pequenas */
-    }
-}
-
-@media (max-width: 480px) {
-    .capa-texto {
-        width: 90%; /* Ocupa mais largura em telas muito pequenas */
-        padding: 8px; /* Padding menor */
-        font-size: 0.8rem; /* Tamanho da fonte ainda menor */
-    }
-}
-
-/* Ajuste de responsividade */
-@media (max-width: 768px) {
-    .capa {
-        height: auto; /* Altura automática em telas menores */
-        padding: 20px; /* Adiciona espaço interno */
-    }
-
-    .imagem-sobreposta {
-        top: 15%; /* Ajusta a posição vertical */
-        left: 5%; /* Ajusta a posição horizontal */
-        width: 50%; /* Aumenta o tamanho da imagem */
-    }
-
-    .capa-texto {
-        width: 100%; /* Ocupa toda a largura */
-        padding: 15px; /* Reduz o padding */
-    }
-}
-
-@media (max-width: 480px) {
-    .imagem-sobreposta {
-        top: 10%; /* Ajusta a posição vertical */
-        left: 5%; /* Ajusta a posição horizontal */
-        width: 60%; /* Aumenta o tamanho da imagem */
-    }
-
-    .capa-texto {
-        padding: 10px; /* Reduz o padding */
-    }
-}
-@media (max-width: 480px) {
-    .imagem-sobreposta {
-        top: 10%; /* Ajusta a posição vertical */
-        left: 5%; /* Ajusta a posição horizontal */
-        width: 60%; /* Aumenta o tamanho da imagem */
-    }
-
-    .capa-texto {
-        padding: 10px; /* Reduz o padding */
-    }
-}
-
 
 .capa-texto h1 {
     font-family: 'Raleway', sans-serif;
@@ -264,11 +201,10 @@ body {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
-    transform-style: preserve-3d;
 }
 
 .servico:hover {
-    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
@@ -313,11 +249,10 @@ body {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
-    transform-style: preserve-3d;
 }
 
 .escolher-item:hover {
-    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
@@ -425,11 +360,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
-    transform-style: preserve-3d;
 }
 
 .avaliacao:hover {
-    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 
