@@ -24,8 +24,8 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #25d366;
-    color: #fff;
+    background-color: #8E9047;
+    color: #fffbfb;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -33,7 +33,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(241, 239, 239, 0.5);
     z-index: 1000;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
@@ -50,9 +50,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centraliza verticalmente */
     text-align: center;
-    height: 100vh;
+    height: 100vh; /* Ocupa toda a altura da tela */
     width: 100%;
     overflow: hidden;
 }
@@ -77,22 +77,24 @@ body {
 .capa-texto {
     position: relative;
     z-index: 3;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.6);
+    color: #f4f6f8;
+    background-color: transparent;
     padding: 15px;
     border-radius: 10px;
-    width: 70%;
-    max-width: 500px;
+    width: 90%; /* Aumentei a largura */
+    max-width: 1000px; /* Aumentei a largura máxima */
     margin: 20px auto;
     box-sizing: border-box;
     font-size: 1rem;
-    text-align: left;
+    text-align: left; /* Alinhamento à esquerda */
 }
+
 
 .capa-texto h1 {
     font-family: 'Raleway', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 10px;
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
 }
 
 .capa-texto h1 strong {
@@ -104,24 +106,92 @@ body {
     margin-bottom: 20px;
 }
 
+/* Estilos para o contêiner do título e imagem PNG */
+.titulo-imagem-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinha o texto à esquerda e a imagem à direita */
+    gap: 30px; /* Espaçamento entre o texto e a imagem */
+}
+
+/* Estilos para o título */
+.texto-titulo h1 {
+    margin: 0; /* Remove margens padrão do h1 */
+    font-size: 2.5rem;
+    line-height: 1.2; /* Ajusta o espaçamento entre as linhas */
+}
+
+/* Estilos para a imagem PNG */
+.imagem-titulo {
+    max-width: 250px; /* Tamanho máximo da imagem */
+    width: 100%; /* Faz a imagem ser responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-left: 20px; /* Espaço entre o texto e a imagem no desktop */
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+    .titulo-imagem-container {
+        flex-direction: column; /* Coloca a imagem abaixo do título */
+        align-items: center; /* Centraliza o conteúdo */
+        gap: 20px; /* Espaçamento entre o título e a imagem */
+    }
+
+    .imagem-titulo {
+        width: 10%; /* Ajusta a largura da imagem no mobile */
+        max-width: 250px; /* Limita o tamanho máximo */
+        margin-top: 20px; /* Espaçamento acima da imagem */
+    }
+
+    .texto-titulo h1 {
+        font-size: 2rem; /* Reduz o tamanho do título no mobile */
+        text-align: center; /* Centraliza o título */
+    }
+}
+
+/* Centralizar e adicionar sombra ao primeiro botão do WhatsApp */
 .capa-texto .btn {
-    background-color: #25d366;
+    background-color: #8E9047;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     font-size: 1.1rem;
     transition: background-color 0.3s, transform 0.3s;
+    margin: 0 auto; /* Centraliza o botão */
 }
 
 .capa-texto .btn:hover {
     background-color: #128c7e;
     transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* Centralizar e adicionar sombra ao primeiro botão do WhatsApp */
+.capa-texto .btn {
+    background-color: #8E9047;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 auto; /* Centraliza o botão */
+}
+
+.capa-texto .btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Restante do CSS (Sobre Mim, Serviços, etc.) permanece inalterado */
 /* Sobre Mim */
 #sobre {
     padding: 60px 0;
@@ -171,7 +241,7 @@ body {
 .sobre-imagem img {
     max-width: 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra na foto do Dr. Paulo */
 }
 
 /* Serviços */
@@ -457,4 +527,50 @@ body {
     #contato p {
         font-size: 1rem;
     }
+}
+
+/* Rodapé */
+footer {
+    background-color: #252853;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Botão do WhatsApp no rodapé */
+footer .whatsapp-float {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 20px auto; /* Centraliza o botão */
+    animation: pulse 2s infinite; /* Animação de pulsar */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 #8E9047;
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+footer .whatsapp-float:hover {
+    animation: none; /* Remove a animação ao passar o mouse */
+    transform: scale(1.1);
+
 }
